@@ -19,6 +19,7 @@ spss.reader <- function(data.file, filename, variable.name)
   library('foreign')
 
   assign(variable.name,
-         read.spss(filename, to.data.frame = TRUE),
+         read.spss(filename, to.data.frame = TRUE,
+                   reencode=getOption("reencode")),
          envir = .GlobalEnv)
 }

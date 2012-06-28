@@ -33,6 +33,15 @@ load.project <- function()
   {
     options(stringsAsFactors = FALSE)
   }
+
+  if (! is.null(config[['SPSS_reencode']]) && config[['SPSS_reencode']] != 'NA')
+  {
+    options(reencode = config[['SPSS_reencode']])
+  }
+  else
+  {
+    options(reencode = NA)
+  }
   
   if (file.exists('lib'))
   {
